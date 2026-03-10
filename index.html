@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Redação ENEM com IA</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+
+<div id="login" class="center">
+
+<div class="card">
+
+<h1 class="title">Plataforma de Redação ENEM com IA</h1>
+
+<input id="username" placeholder="Digite seu nome">
+
+<button onclick="login()">Entrar</button>
+
+</div>
+
+</div>
+
+<div id="app" class="hidden">
+
+<aside class="sidebar">
+
+<h2>Menu</h2>
+
+<button onclick="navigate('dashboard')">Dashboard</button>
+
+<button onclick="navigate('tema')">Gerar Tema</button>
+
+<button onclick="navigate('redacao')">Escrever Redação</button>
+
+</aside>
+
+<main id="content"></main>
+
+</div>
+
+<script type="module" src="js/app.js"></script>
+
+</body>
+</html>
