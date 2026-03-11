@@ -1,53 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Redação ENEM com IA</title>
-
-<link rel="stylesheet" href="css/style.css">
-
-<script src="https://cdn.tailwindcss.com"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redação ENEM com IA</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
+  <header class="hero">
+    <div class="hero-badge">Plataforma Educacional</div>
+    <h1>Redação ENEM com Inteligência Artificial</h1>
+    <p>
+      Treine com foco nas 5 competências do ENEM: escreva, corrija com IA e acompanhe seu desempenho
+      em um ambiente visual moderno e organizado por funcionalidades.
+    </p>
+  </header>
 
-<div id="login" class="center">
+  <main class="layout">
+    <section class="feature-menu" aria-label="Funcionalidades">
+      <button class="feature-btn active" data-target="write-panel" aria-selected="true">
+        ✍️ Escrever Redação
+        <small>Produza sua redação no formato ENEM</small>
+      </button>
+      <button class="feature-btn" data-target="correction-panel" aria-selected="false">
+        🤖 Correção por IA
+        <small>Veja notas por competência e feedback</small>
+      </button>
+      <button class="feature-btn" data-target="history-panel" aria-selected="false">
+        📈 Histórico
+        <small>Acompanhe evolução e desempenho</small>
+      </button>
+    </section>
 
-<div class="card">
+    <section class="content-area">
+      <article id="write-panel" class="feature-panel active">
+        <div class="card">
+          <h2>Área de Escrita</h2>
+          <p class="muted">Digite seu tema e elabore sua redação com estrutura argumentativa.</p>
 
-<h1 class="title">Plataforma de Redação ENEM com IA</h1>
+          <label for="essay-theme">Tema</label>
+          <input id="essay-theme" type="text" placeholder="Ex.: Caminhos para fortalecer a educação midiática no Brasil" />
 
-<input id="username" placeholder="Digite seu nome">
+          <label for="essay-title">Título (opcional)</label>
+          <input id="essay-title" type="text" placeholder="Digite um título para sua redação" />
 
-<button onclick="login()">Entrar</button>
+          <label for="essay-text">Texto da redação</label>
+          <textarea id="essay-text" rows="14" placeholder="Escreva introdução, desenvolvimento e conclusão..."></textarea>
 
-</div>
+          <div class="actions">
+            <button id="correct-btn" class="primary">Corrigir com IA</button>
+            <button id="clear-btn" class="ghost">Limpar texto</button>
+            <span id="status" class="status"></span>
+          </div>
+        </div>
+      </article>
 
-</div>
+      <article id="correction-panel" class="feature-panel">
+        <div class="card">
+          <h2>Área de Correção da IA</h2>
+          <p class="muted">Avaliação por competência (0 a 200), total até 1000 pontos.</p>
 
-<div id="app" class="hidden">
+          <div id="result-empty" class="empty-state">
+            Ainda não há correção. Clique em <strong>Corrigir com IA</strong> na área de escrita.
+          </div>
 
-<aside class="sidebar">
+          <div id="result-card" hidden>
+            <div id="score-grid" class="score-grid"></div>
+            <div class="total-score">
+              <span>Nota total:</span>
+              <strong id="total-score">0</strong>
+              <span>/1000</span>
+            </div>
+            <h3>Feedback da IA</h3>
+            <ul id="feedback-list"></ul>
+          </div>
+        </div>
+      </article>
 
-<h2>Menu</h2>
+      <article id="history-panel" class="feature-panel">
+        <div class="card">
+          <h2>Área de Histórico e Desempenho</h2>
+          <p class="muted">Visualize redações anteriores e acompanhe sua evolução.</p>
+          <div id="history-list" class="history-list"></div>
+        </div>
+      </article>
+    </section>
+  </main>
 
-<button onclick="navigate('dashboard')">Dashboard</button>
-
-<button onclick="navigate('tema')">Gerar Tema</button>
-
-<button onclick="navigate('redacao')">Escrever Redação</button>
-
-</aside>
-
-<main id="content"></main>
-
-</div>
-
-<script type="module" src="js/app.js"></script>
-
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
